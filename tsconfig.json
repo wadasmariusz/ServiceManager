@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "app/*": ["app/*"],
+      "views/*": ["views/*"],
+      "components/*": ["components/*"],
+      "config/*": ["app/config/*"],
+      "public/*": ["public/*"],
+      "layout/*": ["layout/*"],
+      "types/*": ["app/types/*"]
+    },
+    "types": ["@honkhonk/vite-plugin-svgr/client"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", ".jest", ".husky", ".vscode", "coverage"]
+}
