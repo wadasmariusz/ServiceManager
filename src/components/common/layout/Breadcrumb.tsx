@@ -1,6 +1,6 @@
 import { Anchor, Breadcrumbs, Group, Text } from '@mantine/core'
 import { ReactNode, useMemo } from 'react'
-import { HiChevronRight, HiOutlineHome } from 'react-icons/all'
+import { HiChevronRight, HiOutlineHome } from 'react-icons/hi'
 import { Link, To } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { APP_NAME } from 'app/config/env'

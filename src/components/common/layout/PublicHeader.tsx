@@ -36,13 +36,13 @@ export const PublicHeader = () => {
   )
 
   return (
-    <header className="px-8 w-full">
-      <div className="container flex flex-col flex-wrap justify-between items-center py-5 mx-auto max-w-7xl md:flex-row">
-        <div className="flex relative flex-col md:flex-row">
+    <header className="w-full px-8">
+      <div className="container mx-auto flex max-w-7xl flex-col flex-wrap items-center justify-between py-5 md:flex-row">
+        <div className="relative flex flex-col md:flex-row">
           <Text
             component={Link}
             to="/"
-            className="flex items-center mb-5 font-medium md:mb-0 lg:justify-center lg:items-center lg:w-auto"
+            className="mb-5 flex items-center font-medium md:mb-0 lg:w-auto lg:items-center lg:justify-center"
             style={
               dark
                 ? { color: theme.colors.gray[0] }
@@ -51,12 +51,12 @@ export const PublicHeader = () => {
           >
             <img src={logo} />
           </Text>
-          <nav className="flex flex-wrap items-center mb-5 text-base md:pl-8 md:mb-0 md:ml-8 md:border-l md:border-gray-200">
+          <nav className="mb-5 flex flex-wrap items-center text-base md:mb-0 md:ml-8 md:border-l md:border-gray-200 md:pl-8">
             {publicNavItems}
           </nav>
         </div>
 
-        <div className="inline-flex items-center ml-5 space-x-6 lg:justify-end">
+        <div className="ml-5 inline-flex items-center space-x-6 lg:justify-end">
           <UserMenu />
         </div>
       </div>

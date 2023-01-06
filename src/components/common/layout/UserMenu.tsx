@@ -1,5 +1,5 @@
 import { forwardRef, useMemo } from 'react'
-import { HiChevronRight } from 'react-icons/all'
+import { HiChevronRight } from 'react-icons/hi'
 import {
   Group,
   Avatar,

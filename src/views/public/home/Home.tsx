@@ -1,8 +1,8 @@
 const Home = () => {
   return (
     <>
-      <section className="flex flex-col gap-6 justify-between sm:gap-10 md:gap-16 lg:flex-row">
-        <div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:py-24 xl:w-5/12">
+      <section className="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
+        <div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
           <p className="mb-4 font-semibold text-indigo-500 md:mb-6 md:text-lg xl:text-xl">
             Very proud to introduce
           </p>
@@ -20,34 +20,34 @@ const Home = () => {
           <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
             <a
               href="#"
-              className="inline-block py-3 px-8 text-sm font-semibold text-center text-white bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 rounded-lg outline-none focus-visible:ring ring-indigo-300 transition duration-100 md:text-base"
+              className="inline-block rounded-lg bg-indigo-500 py-3 px-8 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base"
             >
               Start now
             </a>
 
             <a
               href="#"
-              className="inline-block py-3 px-8 text-sm font-semibold text-center text-gray-500 active:text-gray-700 bg-gray-200 hover:bg-gray-300 rounded-lg outline-none focus-visible:ring ring-indigo-300 transition duration-100 md:text-base"
+              className="inline-block rounded-lg bg-gray-200 py-3 px-8 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base"
             >
               Take tour
             </a>
           </div>
         </div>
 
-        <div className="overflow-hidden h-48 bg-gray-100 rounded-lg shadow-lg lg:h-auto xl:w-5/12">
+        <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12">
           <img
             src="https://images.unsplash.com/photo-1618004912476-29818d81ae2e?auto=format&q=75&fit=crop&w=1000"
             loading="lazy"
             alt="Photo by Fakurian Design"
-            className="object-cover object-center w-full h-full"
+            className="h-full w-full object-cover object-center"
           />
         </div>
       </section>
 
       <div className="py-6  sm:py-8 lg:py-12">
-        <div className="px-4 mx-auto max-w-screen-2xl md:px-8">
+        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
           <div className="mb-10 md:mb-16">
-            <h2 className="mb-4 text-2xl font-bold text-center text-gray-800 md:mb-6 lg:text-3xl">
+            <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
               Our competitive advantage
             </h2>
 
@@ -60,10 +60,10 @@ const Home = () => {
 
           <div className="grid gap-8 sm:grid-cols-2 md:gap-12 xl:grid-cols-3 xl:gap-16">
             <div className="flex gap-4 md:gap-6">
-              <div className="flex shrink-0 justify-center items-center w-12 h-12 text-white bg-indigo-500 rounded-lg shadow-lg md:w-14 md:h-14 md:rounded-xl">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -87,7 +87,7 @@ const Home = () => {
                 </p>
                 <a
                   href="#"
-                  className="font-bold text-indigo-500 hover:text-indigo-600 active:text-indigo-700 transition duration-100"
+                  className="font-bold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
                 >
                   More
                 </a>
@@ -95,10 +95,10 @@ const Home = () => {
             </div>
 
             <div className="flex gap-4 md:gap-6">
-              <div className="flex shrink-0 justify-center items-center w-12 h-12 text-white bg-indigo-500 rounded-lg shadow-lg md:w-14 md:h-14 md:rounded-xl">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -122,7 +122,7 @@ const Home = () => {
                 </p>
                 <a
                   href="#"
-                  className="font-bold text-indigo-500 hover:text-indigo-600 active:text-indigo-700 transition duration-100"
+                  className="font-bold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
                 >
                   More
                 </a>
@@ -130,10 +130,10 @@ const Home = () => {
             </div>
 
             <div className="flex gap-4 md:gap-6">
-              <div className="flex shrink-0 justify-center items-center w-12 h-12 text-white bg-indigo-500 rounded-lg shadow-lg md:w-14 md:h-14 md:rounded-xl">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -155,7 +155,7 @@ const Home = () => {
                 </p>
                 <a
                   href="#"
-                  className="font-bold text-indigo-500 hover:text-indigo-600 active:text-indigo-700 transition duration-100"
+                  className="font-bold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
                 >
                   More
                 </a>
@@ -163,10 +163,10 @@ const Home = () => {
             </div>
 
             <div className="flex gap-4 md:gap-6">
-              <div className="flex shrink-0 justify-center items-center w-12 h-12 text-white bg-indigo-500 rounded-lg shadow-lg md:w-14 md:h-14 md:rounded-xl">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -188,7 +188,7 @@ const Home = () => {
                 </p>
                 <a
                   href="#"
-                  className="font-bold text-indigo-500 hover:text-indigo-600 active:text-indigo-700 transition duration-100"
+                  className="font-bold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
                 >
                   More
                 </a>
@@ -196,10 +196,10 @@ const Home = () => {
             </div>
 
             <div className="flex gap-4 md:gap-6">
-              <div className="flex shrink-0 justify-center items-center w-12 h-12 text-white bg-indigo-500 rounded-lg shadow-lg md:w-14 md:h-14 md:rounded-xl">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -223,7 +223,7 @@ const Home = () => {
                 </p>
                 <a
                   href="#"
-                  className="font-bold text-indigo-500 hover:text-indigo-600 active:text-indigo-700 transition duration-100"
+                  className="font-bold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
                 >
                   More
                 </a>
@@ -231,10 +231,10 @@ const Home = () => {
             </div>
 
             <div className="flex gap-4 md:gap-6">
-              <div className="flex shrink-0 justify-center items-center w-12 h-12 text-white bg-indigo-500 rounded-lg shadow-lg md:w-14 md:h-14 md:rounded-xl">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-indigo-500 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -258,7 +258,7 @@ const Home = () => {
                 </p>
                 <a
                   href="#"
-                  className="font-bold text-indigo-500 hover:text-indigo-600 active:text-indigo-700 transition duration-100"
+                  className="font-bold text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
                 >
                   More
                 </a>
@@ -269,15 +269,15 @@ const Home = () => {
       </div>
 
       <div className="py-6  sm:py-8 lg:py-12">
-        <div className="px-4 mx-auto max-w-screen-2xl md:px-8">
-          <h2 className="mb-4 text-2xl font-bold text-center text-gray-800 md:mb-8 lg:text-3xl">
+        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+          <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl">
             Trusted by the best
           </h2>
 
-          <div className="grid grid-cols-2 gap-6 p-6 bg-gray-100 rounded-lg sm:content-evenly sm:h-40 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-6 rounded-lg bg-gray-100 p-6 sm:h-40 sm:content-evenly md:grid-cols-4">
             <div className="flex justify-center text-gray-400">
               <svg
-                className="w-auto h-6 sm:h-8 lg:h-10"
+                className="h-6 w-auto sm:h-8 lg:h-10"
                 width="154"
                 height="39"
                 viewBox="0 0 154 39"
@@ -291,7 +291,7 @@ const Home = () => {
 
             <div className="flex justify-center text-gray-400">
               <svg
-                className="w-auto h-6 sm:h-8 lg:h-10"
+                className="h-6 w-auto sm:h-8 lg:h-10"
                 width="186"
                 height="39"
                 viewBox="0 0 186 39"
@@ -305,7 +305,7 @@ const Home = () => {
 
             <div className="flex justify-center text-gray-400">
               <svg
-                className="w-auto h-6 sm:h-8 lg:h-10"
+                className="h-6 w-auto sm:h-8 lg:h-10"
                 width="173"
                 height="39"
                 viewBox="0 0 173 39"
@@ -320,7 +320,7 @@ const Home = () => {
 
             <div className="flex justify-center text-gray-400">
               <svg
-                className="w-auto h-6 sm:h-8 lg:h-10"
+                className="h-6 w-auto sm:h-8 lg:h-10"
                 width="146"
                 height="39"
                 viewBox="0 0 146 39"
@@ -336,9 +336,9 @@ const Home = () => {
       </div>
 
       <div className="py-6  sm:py-8 lg:py-12">
-        <div className="px-4 mx-auto max-w-screen-xl md:px-8">
+        <div className="mx-auto max-w-screen-xl px-4 md:px-8">
           <div className="mb-10 md:mb-16">
-            <h2 className="mb-4 text-2xl font-bold text-center text-gray-800 md:mb-6 lg:text-3xl">
+            <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
               Our Team by the numbers
             </h2>
 
@@ -386,9 +386,9 @@ const Home = () => {
       </div>
 
       <div className="py-6  sm:py-8 lg:py-12">
-        <div className="px-4 mx-auto max-w-screen-xl md:px-8">
+        <div className="mx-auto max-w-screen-xl px-4 md:px-8">
           <div className="mb-10 md:mb-16">
-            <h2 className="mb-4 text-2xl font-bold text-center text-gray-800 md:mb-6 lg:text-3xl">
+            <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
               Meet our Team
             </h2>
 
@@ -400,21 +400,21 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-8">
-            <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg lg:p-8">
-              <div className="overflow-hidden mb-2 w-24 h-24 bg-gray-200 rounded-full shadow-lg md:mb-4 md:w-32 md:h-32">
+            <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                 <img
                   src="https://images.unsplash.com/photo-1567515004624-219c11d31f2e??auto=format&q=75&fit=crop&w=256"
                   loading="lazy"
                   alt="Photo by Radu Florin"
-                  className="object-cover object-center w-full h-full"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
 
               <div>
-                <div className="font-bold text-center text-indigo-500 md:text-lg">
+                <div className="text-center font-bold text-indigo-500 md:text-lg">
                   John McCulling
                 </div>
-                <p className="mb-3 text-sm text-center text-gray-500 md:mb-4 md:text-base">
+                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
                   Founder / CEO
                 </p>
 
@@ -423,10 +423,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -440,10 +440,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -458,21 +458,21 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg lg:p-8">
-              <div className="overflow-hidden mb-2 w-24 h-24 bg-gray-200 rounded-full shadow-lg md:mb-4 md:w-32 md:h-32">
+            <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                 <img
                   src="https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?auto=format&q=75&fit=crop&w=256"
                   loading="lazy"
                   alt="Photo by christian ferrer"
-                  className="object-cover object-center w-full h-full"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
 
               <div>
-                <div className="font-bold text-center text-indigo-500 md:text-lg">
+                <div className="text-center font-bold text-indigo-500 md:text-lg">
                   Kate Berg
                 </div>
-                <p className="mb-3 text-sm text-center text-gray-500 md:mb-4 md:text-base">
+                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
                   CFO
                 </p>
 
@@ -481,10 +481,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -498,10 +498,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -516,21 +516,21 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg lg:p-8">
-              <div className="overflow-hidden mb-2 w-24 h-24 bg-gray-200 rounded-full shadow-lg md:mb-4 md:w-32 md:h-32">
+            <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                 <img
                   src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&q=75&fit=crop&w=256"
                   loading="lazy"
                   alt="Photo by Ayo Ogunseinde"
-                  className="object-cover object-center w-full h-full"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
 
               <div>
-                <div className="font-bold text-center text-indigo-500 md:text-lg">
+                <div className="text-center font-bold text-indigo-500 md:text-lg">
                   Greg Jackson
                 </div>
-                <p className="mb-3 text-sm text-center text-gray-500 md:mb-4 md:text-base">
+                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
                   CTO
                 </p>
 
@@ -539,10 +539,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -556,10 +556,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -574,21 +574,21 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg lg:p-8">
-              <div className="overflow-hidden mb-2 w-24 h-24 bg-gray-200 rounded-full shadow-lg md:mb-4 md:w-32 md:h-32">
+            <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                 <img
                   src="https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?auto=format&q=75&fit=crop&w=256"
                   loading="lazy"
                   alt="Photo by Midas Hofstra"
-                  className="object-cover object-center w-full h-full"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
 
               <div>
-                <div className="font-bold text-center text-indigo-500 md:text-lg">
+                <div className="text-center font-bold text-indigo-500 md:text-lg">
                   Robert Greyson
                 </div>
-                <p className="mb-3 text-sm text-center text-gray-500 md:mb-4 md:text-base">
+                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
                   Creative Director
                 </p>
 
@@ -597,10 +597,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -614,10 +614,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -632,21 +632,21 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg lg:p-8">
-              <div className="overflow-hidden mb-2 w-24 h-24 bg-gray-200 rounded-full shadow-lg md:mb-4 md:w-32 md:h-32">
+            <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                 <img
                   src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?auto=format&q=75&fit=crop&w=256"
                   loading="lazy"
                   alt="Photo by Elizeu Dias"
-                  className="object-cover object-center w-full h-full"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
 
               <div>
-                <div className="font-bold text-center text-indigo-500 md:text-lg">
+                <div className="text-center font-bold text-indigo-500 md:text-lg">
                   John Roberts
                 </div>
-                <p className="mb-3 text-sm text-center text-gray-500 md:mb-4 md:text-base">
+                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
                   Investor Relations
                 </p>
 
@@ -655,10 +655,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -672,10 +672,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -690,21 +690,21 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg lg:p-8">
-              <div className="overflow-hidden mb-2 w-24 h-24 bg-gray-200 rounded-full shadow-lg md:mb-4 md:w-32 md:h-32">
+            <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                 <img
                   src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&q=75&fit=crop&w=256"
                   loading="lazy"
                   alt="Photo by Matheus Ferrero"
-                  className="object-cover object-center w-full h-full"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
 
               <div>
-                <div className="font-bold text-center text-indigo-500 md:text-lg">
+                <div className="text-center font-bold text-indigo-500 md:text-lg">
                   Judy Amandez
                 </div>
-                <p className="mb-3 text-sm text-center text-gray-500 md:mb-4 md:text-base">
+                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
                   Senior Art Director
                 </p>
 
@@ -713,10 +713,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -730,10 +730,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -748,21 +748,21 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg lg:p-8">
-              <div className="overflow-hidden mb-2 w-24 h-24 bg-gray-200 rounded-full shadow-lg md:mb-4 md:w-32 md:h-32">
+            <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                 <img
                   src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&q=75&fit=crop&w=256"
                   loading="lazy"
                   alt="Photo by Leilani Angel"
-                  className="object-cover object-center w-full h-full"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
 
               <div>
-                <div className="font-bold text-center text-indigo-500 md:text-lg">
+                <div className="text-center font-bold text-indigo-500 md:text-lg">
                   Rahul Williams
                 </div>
-                <p className="mb-3 text-sm text-center text-gray-500 md:mb-4 md:text-base">
+                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
                   Creative Director
                 </p>
 
@@ -771,10 +771,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -788,10 +788,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -806,21 +806,21 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg lg:p-8">
-              <div className="overflow-hidden mb-2 w-24 h-24 bg-gray-200 rounded-full shadow-lg md:mb-4 md:w-32 md:h-32">
+            <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 lg:p-8">
+              <div className="mb-2 h-24 w-24 overflow-hidden rounded-full bg-gray-200 shadow-lg md:mb-4 md:h-32 md:w-32">
                 <img
                   src="https://images.unsplash.com/photo-1562904403-a5106bef8319?auto=format&q=75&fit=crop&w=256"
                   loading="lazy"
                   alt="Photo by Jernej Graj"
-                  className="object-cover object-center w-full h-full"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
 
               <div>
-                <div className="font-bold text-center text-indigo-500 md:text-lg">
+                <div className="text-center font-bold text-indigo-500 md:text-lg">
                   Ari Ferris
                 </div>
-                <p className="mb-3 text-sm text-center text-gray-500 md:mb-4 md:text-base">
+                <p className="mb-3 text-center text-sm text-gray-500 md:mb-4 md:text-base">
                   Marketing Analyst
                 </p>
 
@@ -829,10 +829,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -846,10 +846,10 @@ const Home = () => {
                     <a
                       href="#"
                       target="_blank"
-                      className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                      className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
                     >
                       <svg
-                        className="w-5 h-5"
+                        className="h-5 w-5"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -868,87 +868,87 @@ const Home = () => {
       </div>
 
       <div className="py-6  sm:py-8 lg:py-12">
-        <div className="px-4 mx-auto max-w-screen-xl md:px-8">
-          <h2 className="mb-8 text-2xl font-bold text-center text-gray-800 md:mb-12 lg:text-3xl">
+        <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+          <h2 className="mb-8 text-center text-2xl font-bold text-gray-800 md:mb-12 lg:text-3xl">
             What others say about us
           </h2>
 
           <div className="grid gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3 lg:divide-x">
-            <div className="flex flex-col gap-4 items-center sm:px-4 md:gap-6 lg:px-8">
+            <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
               <div className="text-center text-gray-600">
                 “This is a section of some simple filler text, also known as
                 placeholder text.”
               </div>
 
-              <div className="flex flex-col gap-2 items-center sm:flex-row md:gap-3">
-                <div className="overflow-hidden w-12 h-12 bg-gray-100 rounded-full shadow-lg md:w-14 md:h-14">
+              <div className="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
+                <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-100 shadow-lg md:h-14 md:w-14">
                   <img
                     src="https://images.unsplash.com/photo-1567515004624-219c11d31f2e??auto=format&q=75&fit=crop&w=112"
                     loading="lazy"
                     alt="Photo by Radu Florin"
-                    className="object-cover object-center w-full h-full"
+                    className="h-full w-full object-cover object-center"
                   />
                 </div>
 
                 <div>
-                  <div className="text-sm font-bold text-center text-indigo-500 sm:text-left md:text-base">
+                  <div className="text-center text-sm font-bold text-indigo-500 sm:text-left md:text-base">
                     John McCulling
                   </div>
-                  <p className="text-sm text-center text-gray-500 sm:text-left md:text-sm">
+                  <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">
                     CEO / Datadrift
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col gap-4 items-center sm:px-4 md:gap-6 lg:px-8">
+            <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
               <div className="text-center text-gray-600">
                 “This is a section of some simple filler text, also known as
                 placeholder text.”
               </div>
 
-              <div className="flex flex-col gap-2 items-center sm:flex-row md:gap-3">
-                <div className="overflow-hidden w-12 h-12 bg-gray-100 rounded-full shadow-lg md:w-14 md:h-14">
+              <div className="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
+                <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-100 shadow-lg md:h-14 md:w-14">
                   <img
                     src="https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?auto=format&q=75&fit=crop&w=112"
                     loading="lazy"
                     alt="Photo by christian ferrer"
-                    className="object-cover object-center w-full h-full"
+                    className="h-full w-full object-cover object-center"
                   />
                 </div>
 
                 <div>
-                  <div className="text-sm font-bold text-center text-indigo-500 sm:text-left md:text-base">
+                  <div className="text-center text-sm font-bold text-indigo-500 sm:text-left md:text-base">
                     Kate Berg
                   </div>
-                  <p className="text-sm text-center text-gray-500 sm:text-left md:text-sm">
+                  <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">
                     CFO / Dashdash
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="flex flex-col gap-4 items-center sm:px-4 md:gap-6 lg:px-8">
+            <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
               <div className="text-center text-gray-600">
                 “This is a section of some simple filler text, also known as
                 placeholder text.”
               </div>
 
-              <div className="flex flex-col gap-2 items-center sm:flex-row md:gap-3">
-                <div className="overflow-hidden w-12 h-12 bg-gray-100 rounded-full shadow-lg md:w-14 md:h-14">
+              <div className="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
+                <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-100 shadow-lg md:h-14 md:w-14">
                   <img
                     src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&q=75&fit=crop&w=500"
                     loading="lazy"
                     alt="Photo by Ayo Ogunseinde"
-                    className="object-cover object-center w-full h-full"
+                    className="h-full w-full object-cover object-center"
                   />
                 </div>
 
                 <div>
-                  <div className="text-sm font-bold text-center text-indigo-500 sm:text-left md:text-base">
+                  <div className="text-center text-sm font-bold text-indigo-500 sm:text-left md:text-base">
                     Greg Jackson
                   </div>
-                  <p className="text-sm text-center text-gray-500 sm:text-left md:text-sm">
+                  <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">
                     CTO / Uptime
                   </p>
                 </div>
@@ -959,10 +959,10 @@ const Home = () => {
       </div>
 
       <div className="py-6  sm:py-8 lg:py-12">
-        <div className="px-4 mx-auto max-w-screen-2xl md:px-8">
-          <div className="flex flex-col items-center p-4 bg-gray-100 rounded-lg sm:p-8">
+        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+          <div className="flex flex-col items-center rounded-lg bg-gray-100 p-4 sm:p-8">
             <div className="mb-4 sm:mb-8">
-              <h2 className="text-xl font-bold text-center text-indigo-500 sm:text-2xl lg:text-3xl">
+              <h2 className="text-center text-xl font-bold text-indigo-500 sm:text-2xl lg:text-3xl">
                 Get the latest updates
               </h2>
               <p className="text-center text-gray-500">
@@ -970,29 +970,29 @@ const Home = () => {
               </p>
             </div>
 
-            <form className="flex gap-2 mb-3 w-full max-w-md sm:mb-5">
+            <form className="mb-3 flex w-full max-w-md gap-2 sm:mb-5">
               <input
                 placeholder="Email"
-                className="flex-1 py-2 px-3 w-full text-gray-800 placeholder:text-gray-400 rounded border border-gray-300 outline-none focus:ring ring-indigo-300 transition duration-100"
+                className="w-full flex-1 rounded border border-gray-300 py-2 px-3 text-gray-800 outline-none ring-indigo-300 transition duration-100 placeholder:text-gray-400 focus:ring"
               />
 
-              <button className="inline-block py-2 px-8 text-sm font-semibold text-center text-white bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 rounded outline-none focus-visible:ring ring-indigo-300 transition duration-100 md:text-base">
+              <button className="inline-block rounded bg-indigo-500 py-2 px-8 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
                 Send
               </button>
             </form>
 
-            <p className="text-xs text-center text-gray-400">
+            <p className="text-center text-xs text-gray-400">
               By signing up to our newsletter you agree to our{' '}
               <a
                 href="#"
-                className="hover:text-indigo-500 active:text-indigo-600 underline transition duration-100"
+                className="underline transition duration-100 hover:text-indigo-500 active:text-indigo-600"
               >
                 Term of Service
               </a>{' '}
               and{' '}
               <a
                 href="#"
-                className="hover:text-indigo-500 active:text-indigo-600 underline transition duration-100"
+                className="underline transition duration-100 hover:text-indigo-500 active:text-indigo-600"
               >
                 Privacy Policy
               </a>
