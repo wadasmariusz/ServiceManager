@@ -1,6 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { ApiErrorData } from 'app/api/axios'
+import { TApiValidationErrorData, TApiRuntimeErrorData } from 'app/api/axios'
 import { AxiosError, AxiosResponse } from 'axios'
+import { isApiValidationError } from 'components/common/api/ApiErrors'
+
 import { Path, SubmitHandler, useForm } from 'react-hook-form'
 import { useMutation, UseMutationOptions } from 'react-query'
 import { AnyObjectSchema } from 'yup'
@@ -13,7 +15,7 @@ export const useFormMutation = <FormFields, ServerResponse>(
   options: Omit<
     UseMutationOptions<
       ServerResponse,
-      AxiosError<ApiErrorData>,
+      AxiosError<TApiRuntimeErrorData> | AxiosError<TApiValidationErrorData>,
       FormFields,
       unknown
     >,
@@ -26,7 +28,9 @@ export const useFormMutation = <FormFields, ServerResponse>(
     defaultValues: { ...schema.getDefault(), ...initial },
   })
 
-  const handleError = (error: AxiosError<ApiErrorData>) => {
+  const handleValidationError = (
+    error: AxiosError<TApiValidationErrorData>,
+  ) => {
     if (error.response?.status === 401) {
       methods.setError('status' as Path<FormFields>, {
         type: 'API',
@@ -73,18 +77,57 @@ export const useFormMutation = <FormFields, ServerResponse>(
     }
   }
 
-  const { isLoading, mutateAsync } = useMutation(mutationFn, {
+  const { isLoading, mutateAsync, error } = useMutation(mutationFn, {
     ...options,
-    onError: (error: AxiosError<ApiErrorData>, variables, context) => {
-      handleError(error)
+    onError: (
+      error:
+        | AxiosError<TApiValidationErrorData>
+        | AxiosError<TApiRuntimeErrorData>,
+      variables,
+      context,
+    ) => {
+      if (isApiValidationError(error)) {
+        handleValidationError(error)
+      }
+
       if (options.onError) {
         options.onError(error, variables, context)
       }
     },
   })
 
-  const handleSubmit = methods.handleSubmit<FormFields>(((data: FormFields) =>
+  const inputsNames = inputsNamesFromSchema<FormFields>(schema)
+
+  //const handleSubmit = methods.handleSubmit<FormFields>(((data: FormFields) =>
+  const handleSubmit = methods.handleSubmit(((data: FormFields) =>
     mutateAsync(data)) as SubmitHandler<FormFields>)
 
-  return { methods, handleSubmit, isLoading }
+  if (isApiValidationError(error)) {
+    return { methods, handleSubmit, inputsNames, isLoading }
+  }
+
+  return { methods, handleSubmit, inputsNames, isLoading, error }
+}
+
+const inputsNamesFromSchema = <FormFields>(schema: AnyObjectSchema) => {
+  //some magick :))
+  type RemoveIndex<T> = {
+    [P in keyof T as string extends P
+      ? never
+      : number extends P
+      ? never
+      : P]: T[P]
+  }
+
+  type SchemaKeys = keyof RemoveIndex<FormFields>
+  type InputsNamesObject = Record<SchemaKeys, SchemaKeys>
+
+  const inputsNames: InputsNamesObject = {} as InputsNamesObject
+
+  Object.keys(schema.fields).map((value) => {
+    const key = value as SchemaKeys
+    inputsNames[key] = key
+  })
+
+  return inputsNames
 }

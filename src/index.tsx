@@ -1,5 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import { lazy, Suspense, useState } from 'react'
+import { Provider } from 'react-redux'
+import { store } from './app/redux'
 import {
   MantineProvider,
   ColorSchemeProvider,
@@ -30,41 +32,43 @@ const Root = () => {
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'))
 
   return (
-    <ColorSchemeProvider
-      colorScheme={colorScheme}
-      toggleColorScheme={toggleColorScheme}
-    >
-      <MantineProvider
-        emotionCache={emotionCache}
-        theme={{
-          fontFamily: 'Poppins',
-          colorScheme,
-          primaryColor: 'blue',
-          components: {
-            Container: {
-              defaultProps: {
-                sizes: {
-                  xs: 540,
-                  sm: 640,
-                  md: 768,
-                  lg: 1024,
-                  xl: 1280,
-                  '2xl': 1536,
+    <Provider store={store}>
+      <ColorSchemeProvider
+        colorScheme={colorScheme}
+        toggleColorScheme={toggleColorScheme}
+      >
+        <MantineProvider
+          emotionCache={emotionCache}
+          theme={{
+            fontFamily: 'Poppins',
+            colorScheme,
+            primaryColor: 'blue',
+            components: {
+              Container: {
+                defaultProps: {
+                  sizes: {
+                    xs: 540,
+                    sm: 640,
+                    md: 768,
+                    lg: 1024,
+                    xl: 1280,
+                    '2xl': 1536,
+                  },
                 },
               },
             },
-          },
-        }}
-      >
-        <NotificationsProvider>
-          <ModalsProvider>
-            <Suspense fallback={<SpinnerOverlay />}>
-              <App />
-            </Suspense>
-          </ModalsProvider>
-        </NotificationsProvider>
-      </MantineProvider>
-    </ColorSchemeProvider>
+          }}
+        >
+          <NotificationsProvider>
+            <ModalsProvider>
+              <Suspense fallback={<SpinnerOverlay />}>
+                <App />
+              </Suspense>
+            </ModalsProvider>
+          </NotificationsProvider>
+        </MantineProvider>
+      </ColorSchemeProvider>
+    </Provider>
   )
 }
 

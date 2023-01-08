@@ -6,7 +6,7 @@ export const HookFormError = () => {
   const { errors } = formState
 
   const errorsData = Object.entries(errors).filter(
-    ([, value]) => value.type === 'API',
+    ([, value]) => value?.type === 'API',
   )
 
   if (errorsData.length > 0)
@@ -14,7 +14,7 @@ export const HookFormError = () => {
       <Stack mb={'xl'}>
         {errorsData.map(([key, value]) => (
           <Alert key={key} color="red" variant="filled">
-            {value.message}
+            {value?.message}
           </Alert>
         ))}
       </Stack>

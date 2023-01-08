@@ -1,25 +1,21 @@
 import { r } from 'app/router'
-import { RequireGuest } from 'components/common'
-import { lazy } from 'react'
-import { Route } from 'react-router-dom'
-
-const PublicLayout = lazy(() => import('layout/Public'))
-
-const Login = lazy(() => import('../auth/login/Login'))
-const Register = lazy(() => import('../auth/register/Register'))
-const Home = lazy(() => import('../home/Home'))
+import RequireGuest from 'app/router/RequireGuest'
+import { Navigate, Route } from 'react-router-dom'
+import ViewSignIn from '../auth/ViewSignIn'
 
 export const publicRoutes = [
-  <Route key={r['index']} path={r['index']} element={<PublicLayout />}>
-    <Route index element={<Home />} />
-    <Route path={r['auth.login']} element={<Login />} />
-    <Route
-      path={r['auth.register']}
-      element={
-        <RequireGuest>
-          <Register />
-        </RequireGuest>
-      }
-    />
-  </Route>,
+  <Route
+    key={r['index']}
+    path={r['index']}
+    element={<Navigate to={r['auth.login']} />}
+  />,
+  <Route
+    key={r['auth.login']}
+    path={r['auth.login']}
+    element={
+      <RequireGuest>
+        <ViewSignIn />
+      </RequireGuest>
+    }
+  />,
 ]
