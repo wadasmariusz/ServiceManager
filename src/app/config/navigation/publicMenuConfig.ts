@@ -3,7 +3,7 @@ import { NavigationConfigItem } from './userMenuConfig'
 export const publicMenuConfig: NavigationConfigItem[] = [
   // {
   //   type: 'item',
-  //   route: r['reports.list'],
+  //   route: routes['reports.list'],
   //   label: 'Reports',
   // },
 ]

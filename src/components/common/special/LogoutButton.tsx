@@ -1,7 +1,7 @@
 import { Menu, Text } from '@mantine/core'
 import { useModals } from '@mantine/modals'
 import { NavigationConfigItem } from 'app/config/navigation/userMenuConfig'
-import { r } from 'app/router'
+import { routes } from 'app/router'
 import { useAuth } from 'app/store'
 import { useNavigate } from 'react-router-dom'
 
@@ -26,7 +26,7 @@ export const LogoutButton = ({
       confirmProps: { color: 'blue' },
       onConfirm: () => {
         clearAuthState()
-        navigate(r['index'])
+        navigate(routes['index'])
       },
     })
 

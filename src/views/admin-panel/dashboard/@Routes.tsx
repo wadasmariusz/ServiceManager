@@ -1,11 +1,11 @@
 import { Route } from 'react-router-dom'
-import { r } from 'app/router'
+import { routes } from 'app/router'
 import { ViewAdminDashboard } from './ViewAdminDashboard'
 
 export const AdminPanelDashboardRoutes = [
   <Route
-    path={r['admin-panel.dashboard']}
-    key={r['admin-panel.dashboard']}
+    path={routes['admin-panel.dashboard']}
+    key={routes['admin-panel.dashboard']}
     element={<ViewAdminDashboard />}
   />,
 ]

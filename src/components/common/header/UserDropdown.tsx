@@ -6,7 +6,7 @@ import { useMantineTheme } from '@mantine/core'
 import { useActions } from 'app/hooks/useActions'
 import { useTypedSelector } from 'app/hooks/useTypedSelector'
 import { logout } from 'app/api/auth/logout'
-import { r } from 'app/router'
+import { routes } from 'app/router'
 
 import { ConfirmModal } from 'components/common/modals/ConfirmModal'
 
@@ -58,12 +58,12 @@ type MenuItem =
 // TODO: add more sophisticated logic for menu items
 const guestMenuItems: MenuItem[] = [
   {
-    link: r['auth.login'],
+    link: routes['auth.login'],
     label: 'Logowanie',
     icon: <AiOutlineUser size={16} />,
   },
   {
-    link: r['auth.register'],
+    link: routes['auth.register'],
     label: 'Rejestracja',
     icon: <AiOutlineUserAdd size={16} />,
   },

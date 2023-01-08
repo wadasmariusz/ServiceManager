@@ -1,10 +1,12 @@
-import { useQueryContext } from './QueryProvider'
+import { useQueryContext } from './PaginatedQueryProvider'
 
-interface QueryHasResultsProps<T> {
+type QueryHasResultsProps<T> = {
   children: ((data: T[]) => JSX.Element) | JSX.Element
 }
 
-export function QueryHasResults<T>({ children }: QueryHasResultsProps<T>) {
+export function PaginatedQueryHasResults<T>({
+  children,
+}: QueryHasResultsProps<T>) {
   const queryData = useQueryContext<T>()
 
   return (

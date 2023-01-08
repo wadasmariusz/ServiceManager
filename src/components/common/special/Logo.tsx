@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { r } from '../../../app/router'
+import { routes } from '../../../app/router'
 
 export const Logo = () => {
   return (
-    <Link to={r['index']}>
+    <Link to={routes['index']}>
       <img style={{ height: '3em', margin: '0.5em' }} src="/logo-black.png" />
     </Link>
   )

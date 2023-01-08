@@ -1,5 +1,5 @@
 import { PERMISSION_USER } from 'app/config/permissions'
-import { r } from 'app/router'
+import { routes } from 'app/router'
 import { RequireAuth } from 'components/common'
 import { lazy } from 'react'
 import { Route } from 'react-router-dom'
@@ -10,8 +10,8 @@ const ReportList = lazy(() => import('../View_ReportList'))
 
 export const reportRoutes = [
   <Route
-    key={r['reports.list']}
-    path={r['reports.list']}
+    key={routes['reports.list']}
+    path={routes['reports.list']}
     element={
       <RequireAuth roles={[PERMISSION_USER]}>
         <PublicLayout />

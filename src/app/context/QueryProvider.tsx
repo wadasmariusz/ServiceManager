@@ -1,11 +1,11 @@
-import { ApiErrors } from 'components/common/api'
-import { createContext, ReactNode, useContext } from 'react'
 import { once } from 'lodash'
-import { UsePaginatedQueryResult } from 'app/hooks'
-import { ApiPagination } from 'components/common/api/ApiPagination'
-import { SpinnerOverlay } from 'components/common/layout'
+import { createContext, ReactNode, useContext } from 'react'
+import { UseQuery2Result } from 'app/hooks'
+import { ApiErrors } from 'components/common/api/ApiErrors'
 
-type ApiQueryResult<T> = Partial<UsePaginatedQueryResult<T>>
+import { AppBarLoader } from 'components/common/special/AppBarLoader'
+
+type ApiQueryResult<T> = Partial<UseQuery2Result<T>>
 
 export type QueryContextValue<T = unknown> =
   | ApiQueryResult<T> & {
@@ -17,6 +17,7 @@ const createQueryContext = once(<T,>() =>
     children: null,
   }),
 )
+
 export const useQueryContext = <T,>() => useContext(createQueryContext<T>())
 
 export function QueryProvider<T>(queryData: QueryContextValue<T>) {
@@ -24,8 +25,10 @@ export function QueryProvider<T>(queryData: QueryContextValue<T>) {
 
   return (
     <QueryContext.Provider value={queryData}>
+      {queryData?.isFetching ? <AppBarLoader /> : null}
+
       {queryData?.status !== 'success' && queryData?.isFetching ? (
-        <SpinnerOverlay />
+        <AppBarLoader />
       ) : (
         <ApiErrors error={queryData?.error} />
       )}
@@ -37,8 +40,6 @@ export function QueryProvider<T>(queryData: QueryContextValue<T>) {
             : queryData.children}
         </>
       )}
-
-      <ApiPagination />
     </QueryContext.Provider>
   )
 }

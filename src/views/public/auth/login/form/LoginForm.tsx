@@ -8,7 +8,7 @@ import { useActions } from 'app/hooks/useActions'
 import { SetAuthStoreAction } from 'app/redux/actions'
 
 import { login, LoginFormFields, LoginResponse, loginSchema } from 'app/api'
-import { r } from 'app/router'
+import { routes } from 'app/router'
 
 import { MdOutlineAlternateEmail } from 'react-icons/md'
 
@@ -29,7 +29,7 @@ export const LoginForm = () => {
 
   const onSuccess = async (data: LoginResponse) => {
     await setAuthStore(data)
-    navigate(r['admin-panel'])
+    navigate(routes['admin-panel'])
   }
 
   const { methods, handleSubmit, error } = useFormMutation<
@@ -60,7 +60,7 @@ export const LoginForm = () => {
 
       <AuthFormLink
         label="Zapomniałeś hasła?"
-        to={r['auth.register']}
+        to={routes['auth.register']}
         linkText="Zresetuj hasło."
         className="mt-2"
       />

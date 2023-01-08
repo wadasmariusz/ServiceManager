@@ -1,11 +1,12 @@
 import { ROLE_ADMIN } from './roles'
 import { To } from 'react-router-dom'
 
-import { r } from 'app/router'
+import { routes } from 'app/router'
 
 import { IconType } from 'react-icons'
 
 import { AiOutlineHome } from 'react-icons/ai'
+import { FiUsers } from 'react-icons/fi'
 
 type TSideNavItemConfig = {
   navigateWithSearch: boolean
@@ -34,8 +35,15 @@ export const adminPanelSideNavigationConfig: TSideNavItem[] = [
   {
     id: 'home',
     label: 'Pulpit',
-    route: r['admin-panel.dashboard'],
+    route: routes['admin-panel.dashboard'],
     icon: AiOutlineHome,
+    roles: [ROLE_ADMIN],
+  },
+  {
+    id: 'users',
+    label: 'Użytkownicy',
+    route: routes['admin-panel.users'],
+    icon: FiUsers,
     roles: [ROLE_ADMIN],
   },
 ]
