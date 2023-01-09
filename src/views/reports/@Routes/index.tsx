@@ -1,6 +1,6 @@
 import { PERMISSION_USER } from 'app/config/permissions'
 import { routes } from 'app/router'
-import { RequireAuth } from 'components/common'
+import RequireAuth from 'app/router/RequireAuth'
 import { lazy } from 'react'
 import { Route } from 'react-router-dom'
 

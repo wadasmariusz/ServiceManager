@@ -4,7 +4,7 @@ import UsersListTable from '../../../components/admin-panel/users/UsersListTable
 
 import { useGetUsers, TUserItem } from 'app/api/admin/users/getUsers'
 
-import { PaginatedQueryProvider } from 'app/context/PaginatedQueryProvider'
+import { PaginatedQueryProvider } from 'app/context'
 
 import { Breadcrumb } from 'components/common/layout'
 
