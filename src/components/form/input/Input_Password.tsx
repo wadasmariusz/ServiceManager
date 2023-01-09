@@ -3,7 +3,8 @@ import { getPasswordStrength, RequirementsType } from 'app/utils'
 import { useState } from 'react'
 import { RefCallBack } from 'react-hook-form'
 import { Controller, FieldError, useFormContext } from 'react-hook-form'
-import { FiLock, HiOutlineCheck, ImCross } from 'react-icons/all'
+import { FiLock, ImCross } from 'react-icons/all'
+import { HiOutlineCheck } from 'react-icons/hi'
 import { IconType } from 'react-icons/lib'
 
 interface InputPasswordProps {

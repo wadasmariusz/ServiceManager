@@ -22,6 +22,6 @@ export const register = async (
 ): Promise<AxiosResponse> =>
   await axios({
     method: 'POST',
-    url: `${API_URL}/account/sign-up`,
+    url: `${API_URL}/accounts/sign-up`,
     data,
   })

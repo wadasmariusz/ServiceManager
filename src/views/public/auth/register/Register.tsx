@@ -1,5 +1,5 @@
 import { Title, Paper, Text, Anchor } from '@mantine/core'
-import { r } from 'app/router'
+import { routes } from 'app/router'
 import { Link } from 'react-router-dom'
 import { FormRegister } from './form/FormRegister'
 
@@ -34,7 +34,7 @@ const Register = () => {
           >
             <Text align="center" py={'sm'}>
               Masz już konto?{' '}
-              <Anchor component={Link} to={r['auth.login']}>
+              <Anchor component={Link} to={routes['auth.login']}>
                 Zaloguj się
               </Anchor>
             </Text>

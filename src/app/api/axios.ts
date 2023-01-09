@@ -1,46 +1,46 @@
-import axios, { AxiosError, AxiosRequestConfig } from 'axios'
-import { refreshToken } from './auth/refreshToken'
+import axios, { AxiosError } from 'axios'
 
-interface AxiosReqConfig extends AxiosRequestConfig {
-  _retry?: boolean
-}
-
-export interface ApiErrorData {
+export type TApiGetErrorData = {
   status: number
   title: string
+  traceId: string
+  type: string
+}
+
+export type TApiValidationErrorData = {
+  status: number
+  title: string
+  traceId: string
+  type: string
   errors?: {
     [s: string]: string[]
   }
 }
 
-export const setupAxios = (accessToken: string | null) => {
+export type TApiRuntimeErrorData = {
+  errors: { code: string; message: string }[]
+}
+
+export type TUseQueryErrors =
+  | AxiosError<TApiGetErrorData>
+  | AxiosError<''>
+  | AxiosError<TApiValidationErrorData>
+  | null
+  | undefined
+export type TUseMutationErrors =
+  | AxiosError<TApiValidationErrorData>
+  | AxiosError<TApiRuntimeErrorData>
+  | null
+  | undefined
+export type TApiErrors = TUseQueryErrors | TUseMutationErrors
+export const setupAxios = () => {
   axios.interceptors.request.use(
     (config) => {
-      if (accessToken) config.headers!.Authorization = `Bearer ${accessToken}`
+      config.withCredentials = true
 
       return config
     },
     (err) => Promise.reject(err),
-  )
-
-  axios.interceptors.response.use(
-    (response) => response,
-    async (error: AxiosError) => {
-      const originalRequest = error.config as AxiosReqConfig
-      if (error.response?.status === 401 && !originalRequest._retry) {
-        originalRequest._retry = true
-        try {
-          const { accessToken: token } = await refreshToken()
-          axios.defaults.headers.common.Authorization = `Bearer ${token}`
-          return axios(originalRequest)
-        } catch (e) {
-          console.error(e)
-        }
-        return Promise.reject(error)
-      }
-
-      return Promise.reject(error)
-    },
   )
 }
 

@@ -1,7 +1,9 @@
 import { useQueryContext } from './QueryProvider'
 
-interface QueryIsSuccessProps<T> {
-  children: (data: T | T[] | undefined) => JSX.Element | JSX.Element
+type QueryIsSuccessProps<T> = {
+  children:
+    | ((data: T | undefined) => JSX.Element | JSX.Element[] | null)
+    | React.ReactNode
 }
 
 export const QueryIsSuccess = <T,>({ children }: QueryIsSuccessProps<T>) => {

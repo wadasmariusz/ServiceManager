@@ -3,7 +3,7 @@ import { MdOutlineAlternateEmail, ImCross } from 'react-icons/all'
 import { Group, Stack } from '@mantine/core'
 import { InputPassword, InputSubmit, InputText } from 'components/form/input'
 import { useNavigate } from 'react-router-dom'
-import { r } from 'app/router'
+import { routes } from 'app/router'
 import { showNotification } from '@mantine/notifications'
 import { AxiosError, AxiosResponse } from 'axios'
 import { HookFormError } from 'components/form/helpers/HookFormError'
@@ -23,7 +23,7 @@ export const FormRegister = () => {
   const navigate = useNavigate()
 
   const onSuccess = () => {
-    navigate(r['auth.login'])
+    navigate(routes['auth.login'])
   }
 
   const onError = (err: AxiosError<ApiErrorData>) => {

@@ -1,4 +1,4 @@
-import { r } from 'app/router'
+import { routes } from 'app/router'
 import { IconType } from 'react-icons'
 import {
   MdLogout,
@@ -27,14 +27,14 @@ export const userMenuConfig: NavigationConfigItem[] = [
   },
   {
     type: 'item',
-    route: r['auth.login'],
+    route: routes['auth.login'],
     icon: FiLogIn,
     label: 'Login',
     permissions: [PERMISSION_GUEST],
   },
   {
     type: 'item',
-    route: r['auth.register'],
+    route: routes['auth.register'],
     icon: AiOutlineUserAdd,
     label: 'Register',
     permissions: [PERMISSION_GUEST],

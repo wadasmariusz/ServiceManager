@@ -1,4 +1,4 @@
-import { r } from 'app/router'
+import { routes } from 'app/router'
 import { useAuth } from 'app/store'
 import { Location, Navigate, useLocation } from 'react-router-dom'
 
@@ -20,13 +20,15 @@ export const RequireAuth = ({
   const location = useLocation()
 
   if (!userId)
-    return <Navigate to={r['auth.login']} state={{ from: location }} replace />
+    return (
+      <Navigate to={routes['auth.login']} state={{ from: location }} replace />
+    )
 
   const userHasRequiredRoles =
     !roles || (userRoles && roles.some((role) => userRoles.includes(role)))
 
   // TODO: ADD UNAUTHORIZED VIEW
-  if (!userHasRequiredRoles) return <Navigate to={r['index']} />
+  if (!userHasRequiredRoles) return <Navigate to={routes['index']} />
 
   return children
 }

@@ -14,7 +14,7 @@ export const refreshToken = async (): Promise<
 > => {
   const res = await axios({
     method: 'POST',
-    url: `${API_URL}/account/refresh-token`,
+    url: `${API_URL}/accounts/refresh-token`,
     withCredentials: true,
   })
   return await res.data
