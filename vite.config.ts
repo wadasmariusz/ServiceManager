@@ -14,4 +14,7 @@ export default defineConfig({
     react(),
     tsconfigPaths(),
   ],
+  esbuild: {
+    logOverride: { 'this-is-undefined-in-esm': 'silent' },
+  },
 })
