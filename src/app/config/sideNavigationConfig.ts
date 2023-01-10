@@ -7,6 +7,7 @@ import { IconType } from 'react-icons'
 
 import { AiOutlineHome } from 'react-icons/ai'
 import { FiUsers } from 'react-icons/fi'
+import { RiCustomerService2Fill } from 'react-icons/ri'
 
 type TSideNavItemConfig = {
   navigateWithSearch: boolean
@@ -44,6 +45,13 @@ export const adminPanelSideNavigationConfig: TSideNavItem[] = [
     label: 'Użytkownicy',
     route: routes['admin-panel.users'],
     icon: FiUsers,
+    roles: [ROLE_ADMIN],
+  },
+  {
+    id: 'services',
+    label: 'Usługi',
+    route: routes['admin-panel.services'],
+    icon: RiCustomerService2Fill,
     roles: [ROLE_ADMIN],
   },
 ]

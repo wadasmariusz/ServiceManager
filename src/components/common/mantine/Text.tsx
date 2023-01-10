@@ -16,11 +16,13 @@ type TextProps =
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       component?: any
       withEllipsis?: boolean
+      //is Table Data Cell - if it is the text gonna be gray
+      tdc?: boolean
     } & MantineTextProps)
   | Partial<Record<string, object | string>>
 
 //TODO: add gray shades for light and dark theme
-export const Text = ({ withEllipsis = false, ...props }: TextProps) => {
+export const Text = ({ withEllipsis = false, tdc, ...props }: TextProps) => {
   const { classes, cx } = useStyles()
 
   if (withEllipsis)
@@ -31,6 +33,14 @@ export const Text = ({ withEllipsis = false, ...props }: TextProps) => {
           {...props}
         ></MantineText>
       </Box>
+    )
+  else if (tdc)
+    return (
+      <MantineText
+        color="#7E8299"
+        className={cx({ [classes.overflowWithElipsis]: withEllipsis })}
+        {...props}
+      ></MantineText>
     )
 
   return (

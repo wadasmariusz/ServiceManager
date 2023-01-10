@@ -61,7 +61,7 @@ const UsersListElement = ({ user }: IUser) => {
             component={Link}
             to={routes['admin-panel.user'](user?.userId)}
             className={classes.link}
-            color="dimmed"
+            tdc
             fz="xs"
           >
             <MdEmail className={classes.inline} />
@@ -69,11 +69,11 @@ const UsersListElement = ({ user }: IUser) => {
           </Text>
         </td>
         <td>
-          <Text>{user.phoneNumber ? user.phoneNumber : 'brak danych'}</Text>
+          <Text tdc>{user.phoneNumber ? user.phoneNumber : 'brak danych'}</Text>
         </td>
         <td>
           {user.role == 'admin' && (
-            <Text>
+            <Text tdc>
               <Badge size="md" color="red">
                 <MdAdminPanelSettings size={15} className={classes.inline} />
               </Badge>
@@ -81,7 +81,7 @@ const UsersListElement = ({ user }: IUser) => {
             </Text>
           )}
           {user.role == 'user' && (
-            <Text>
+            <Text tdc>
               <Badge size="md" c="blue">
                 <FaUser size={15} className={classes.inline} />
               </Badge>
@@ -106,7 +106,9 @@ const UsersListElement = ({ user }: IUser) => {
             </Text>
           )}
         </td>
-        <td>{dayjs(user.createdAt).format('DD.MM.YYYY, HH:mm')}</td>
+        <td>
+          <Text tdc>{dayjs(user.createdAt).format('DD.MM.YYYY, HH:mm')}</Text>
+        </td>
         <td>
           <Menu opened={menuOpened} onChange={setMenuOpened}>
             <Menu.Target>
