@@ -17,5 +17,10 @@ export const adminRoutes = {
   // 'admin-panel.service': (serviceId = ':serviceId') =>
   //   `${BASE_URL}/panel-administratora/uslugi/${serviceId}`,
   'admin-panel.service': `${BASE_URL}/panel-administratora/uslugi/serviceId`,
+
+  // 'admin-panel.services.edit-service': (serviceId = ':serviceId') =>
+  //   `${BASE_URL}/panel-administratora/uslugi/${serviceId}/edycja`,
+  'admin-panel.services.edit-service': `${BASE_URL}/panel-administratora/uslugi/serviceId/edycja`,
+
   'admin-panel.services.add-service': `${BASE_URL}/panel-administratora/uslugi/dodaj-usluge`,
 }

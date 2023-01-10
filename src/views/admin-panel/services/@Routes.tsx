@@ -3,6 +3,7 @@ import { routes } from 'app/router'
 import ViewServices from './ViewServices'
 import ViewSingleService from './ViewSingleService'
 import ViewAddService from './ViewAddService'
+import ViewEditService from './ViewEditService'
 
 export const AdminPanelServicesRoutes = [
   <Route
@@ -16,6 +17,13 @@ export const AdminPanelServicesRoutes = [
     key={routes['admin-panel.service']}
     path={routes['admin-panel.service']}
     element={<ViewSingleService />}
+  />,
+  <Route
+    // key={routes['admin-panel.services.edit-service']()}
+    // path={routes['admin-panel.services.edit-service']()}
+    key={routes['admin-panel.services.edit-service']}
+    path={routes['admin-panel.services.edit-service']}
+    element={<ViewEditService />}
   />,
   <Route
     key={routes['admin-panel.services.add-service']}

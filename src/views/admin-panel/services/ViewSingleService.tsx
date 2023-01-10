@@ -1,13 +1,15 @@
 import { routes } from 'app/router'
-// import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
+// import { useParams } from 'react-router-dom'
 // import { useGetService } from 'app/api/admin/users/getUser'
 
 import { Breadcrumb } from 'components/common/layout'
 
-import { Card, Group, Stack, Text } from '@mantine/core'
+import { Button, Card, Group, Stack, Text } from '@mantine/core'
 
 import { service } from 'app/mocks/services/service'
+import { AiOutlineEdit } from 'react-icons/ai'
 
 const ViewSingleService = () => {
   //   const { serviceId } = useParams()
@@ -39,9 +41,19 @@ const ViewSingleService = () => {
       >
         <Card.Section className="min-h-[100px]">
           <Stack p={20}>
-            <Text size="lg" weight={600}>
-              {service.name}
-            </Text>
+            <Group position="apart">
+              <Text size="lg" weight={600}>
+                {service.name}
+              </Text>
+              <Button
+                component={Link}
+                // to={routes['admin-panel.services.edit-service'](serviceId)}
+                to={routes['admin-panel.services.edit-service']}
+              >
+                <AiOutlineEdit size={20} />
+                Edytuj
+              </Button>
+            </Group>
             <Group spacing="xs">
               <Text inline fw={500}>
                 Czas trwania:
