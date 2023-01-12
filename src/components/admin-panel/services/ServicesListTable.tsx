@@ -6,7 +6,6 @@ import ServicesListElement from './ServicesListElement'
 
 const headers = [
   { id: '1', label: 'Nazwa' },
-  { id: '2', label: 'Opis' },
   { id: '3', label: 'Czas Trwania' },
   { id: '4', label: 'Cena' },
   { id: '5', label: 'Dietetyk' },

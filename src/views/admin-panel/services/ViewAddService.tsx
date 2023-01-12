@@ -10,7 +10,7 @@ import { routes } from 'app/router'
 import { isApiRuntimeError } from 'components/common/api/ApiErrors'
 import { CardForm } from 'components/common/cards/CardForm'
 import { InputText } from 'components/common/inputs'
-import { InputTextArea } from 'components/common/inputs/InputTextArea'
+import { InputRichTextArea } from 'components/common/inputs/InputRichTextArea'
 
 import { Breadcrumb } from 'components/common/layout'
 import mantineNotification from 'components/common/mantine/notifications'
@@ -33,7 +33,7 @@ const ViewServices = () => {
   const onError = (error: TUseMutationErrors) => {
     if (isApiRuntimeError(error)) {
       mantineNotification.error({
-        message: error?.response?.data?.errors[0]?.message,
+        message: 'Błąd: ' + error?.response?.data?.errors[0]?.message,
       })
     }
   }
@@ -56,7 +56,7 @@ const ViewServices = () => {
           <InputText name="duration" label="Czas trwania(min)" />
           <InputText name="amount" label="Cena" />
           <InputText name="currency" label="Waluta" placeholder="zł" />
-          <InputTextArea name="description" label="Opis" />
+          <InputRichTextArea name="description" label="Opis" />
         </CardForm>
       </FormProvider>
     </>

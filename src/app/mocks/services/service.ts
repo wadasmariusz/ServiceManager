@@ -1,12 +1,12 @@
 import { TServiceItem } from 'app/api/admin/services/getServices'
 
 export const service: TServiceItem = {
-  serviceId: 'SSDCSdfsdfsdCCSD234234',
-  name: 'Wizyta Kontrolna 2',
-  duration: '60',
+  serviceId: 'SSDCSdfsdfsdCCgdv34234',
+  name: 'Wizyta Kontrolna 5',
+  duration: '30',
   description:
-    'Kolejna analiza składu ciała na profesjonalnej wadze InBody 170 (tylko stacjonarnie). Analiza podjętych działań żywieniowych, sprawdzanie efektów pacje...',
-  amount: '130',
+    '<h1>Badanie masy ciała</h1><h2>Kolejna analiza składu ciała na profesjonalnej wadze InBody 170 (tylko stacjonarnie). </h2><p>Analiza podjętych działań żywieniowych, sprawdzanie efektów pacjenta.</p>',
+  amount: '50',
   currency: 'zł',
   dietitian: 'recgLvMYkfxwbTGjU',
 }

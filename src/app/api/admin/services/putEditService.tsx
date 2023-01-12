@@ -29,9 +29,11 @@ export type EditServiceResponse = {
 //TO-DO: podpiąć odpowiednio do API
 export const putEditService = (
   data: EditServiceFormFields,
-): Promise<AxiosResponse<EditServiceResponse>['data']> =>
-  axios({
-    method: 'POST',
-    url: `${API_URL}/services`,
+): Promise<AxiosResponse<EditServiceResponse>['data']> => {
+  console.log(data)
+  return axios({
+    method: 'PUT',
+    url: `${API_URL}/testtesfd`,
     data: data,
   }).then(({ data }) => data)
+}

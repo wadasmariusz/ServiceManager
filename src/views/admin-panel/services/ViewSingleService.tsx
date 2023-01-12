@@ -1,21 +1,36 @@
 import { routes } from 'app/router'
 import { Link } from 'react-router-dom'
 
+import DOMPurify from 'dompurify'
+
 // import { useParams } from 'react-router-dom'
 // import { useGetService } from 'app/api/admin/users/getUser'
 
 import { Breadcrumb } from 'components/common/layout'
 
-import { Button, Card, Group, Stack, Text } from '@mantine/core'
+import { Button, Card, createStyles, Group, Stack, Text } from '@mantine/core'
 
 import { service } from 'app/mocks/services/service'
 import { AiOutlineEdit } from 'react-icons/ai'
+
+// const useStyles = createStyles(() => ({
+//   defaultStyles: {
+//     h1: { fontSize: '32px', fontWeight: 500 },
+//     h2: { fontSize: '24px', fontWeight: 500 },
+//     h3: { fontSize: '18px', fontWeight: 500 },
+//     h4: { fontSize: '16px', fontWeight: 500 },
+//     h5: { fontSize: '13px', fontWeight: 500 },
+//     h6: { fontSize: '11px', fontWeight: 500 },
+//   },
+// }))
 
 const ViewSingleService = () => {
   //   const { serviceId } = useParams()
 
   //   const query = useGetService(serviceId)
   //   const service = query.data
+
+  // const { classes } = useStyles()
 
   const breadcrumbItems = [
     {
@@ -74,12 +89,17 @@ const ViewSingleService = () => {
               </Text>
               <Text color="dimmed">{service.dietitian}</Text>
             </Group>
-            <Group spacing="xs">
-              <Text inline fw={500}>
-                Opis:
-              </Text>
-              <Text color="dimmed">{service.description}</Text>
-            </Group>
+            {/* <Stack spacing="xs"> */}
+            <Text inline fw={500}>
+              Opis:
+            </Text>
+            <Text
+              // className={classes.defaultStyles}
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(service.description),
+              }}
+            ></Text>
+            {/* </Stack> */}
           </Stack>
         </Card.Section>
       </Card>

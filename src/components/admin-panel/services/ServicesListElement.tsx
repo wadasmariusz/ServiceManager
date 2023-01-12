@@ -6,7 +6,6 @@ import { Text } from 'components/common/mantine/Text'
 
 import { TServiceItem } from 'app/api/admin/services/getServices'
 
-import { shortenString } from 'components/common/special/ShortenString'
 import { Group } from '@mantine/core'
 
 const useStyles = createStyles(() => ({
@@ -41,9 +40,6 @@ const ServicesListElement = ({ service }: IService) => {
           >
             {service.name}
           </Text>
-        </td>
-        <td>
-          <Text tdc>{shortenString(service.description, 50)}</Text>
         </td>
         <td>
           <Group spacing={5}>
