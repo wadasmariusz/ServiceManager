@@ -1,4 +1,5 @@
 import { Tabs } from '@mantine/core'
+import AccessibilityForm from 'components/admin-panel/accessibility/AccessibilityForm'
 
 const ViewAccessibility = () => {
   return (
@@ -9,7 +10,7 @@ const ViewAccessibility = () => {
       </Tabs.List>
 
       <Tabs.Panel value="accessibility" pt="xs">
-        Dostępność
+        <AccessibilityForm />
       </Tabs.Panel>
 
       <Tabs.Panel value="shedule" pt="xs">

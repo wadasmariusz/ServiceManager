@@ -1,4 +1,4 @@
-import { ROLE_ADMIN, ROLE_GUEST } from './roles'
+import { ROLE_ADMIN } from './roles'
 import { To } from 'react-router-dom'
 
 import { routes } from 'app/router'
