@@ -1,4 +1,4 @@
-import { ROLE_ADMIN } from './roles'
+import { ROLE_ADMIN, ROLE_GUEST } from './roles'
 import { To } from 'react-router-dom'
 
 import { routes } from 'app/router'
@@ -8,6 +8,7 @@ import { IconType } from 'react-icons'
 import { AiOutlineHome } from 'react-icons/ai'
 import { FiUsers } from 'react-icons/fi'
 import { RiCustomerService2Fill } from 'react-icons/ri'
+import { BsCalendar3 } from 'react-icons/bs'
 
 type TSideNavItemConfig = {
   navigateWithSearch: boolean
@@ -52,6 +53,13 @@ export const adminPanelSideNavigationConfig: TSideNavItem[] = [
     label: 'Usługi',
     route: routes['admin-panel.services'],
     icon: RiCustomerService2Fill,
+    roles: [ROLE_ADMIN],
+  },
+  {
+    id: 'accessibility',
+    label: 'Dostępność',
+    route: routes['admin-panel.accessibility'],
+    icon: BsCalendar3,
     roles: [ROLE_ADMIN],
   },
 ]

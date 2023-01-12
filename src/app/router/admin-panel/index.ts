@@ -23,4 +23,7 @@ export const adminRoutes = {
   'admin-panel.services.edit-service': `${BASE_URL}/panel-administratora/uslugi/serviceId/edycja`,
 
   'admin-panel.services.add-service': `${BASE_URL}/panel-administratora/uslugi/dodaj-usluge`,
+
+  //ACCESSIBILITY
+  'admin-panel.accessibility': `${BASE_URL}/panel-administratora/dostepnosc`,
 }
