@@ -134,35 +134,35 @@ const ViewSingleUser = () => {
         <Divider my="xl" />
         <Card.Section pl={20} pb={20}>
           <Stack>
-            <Text transform="uppercase" color="dimmed">
+            <Text transform="uppercase" weight={500}>
               Informacje
             </Text>
             <Group spacing="xs">
-              <Text inline color="dimmed" fw={600}>
+              <Text inline fw={500}>
                 Imie i Nazwisko:
               </Text>
-              <Text>
+              <Text color="dimmed">
                 {user?.firstName && user?.lastName
                   ? user?.firstName + ' ' + user?.lastName
                   : 'brak danych'}
               </Text>
             </Group>
             <Group spacing="xs">
-              <Text inline color="dimmed" fw={600}>
+              <Text inline fw={500}>
                 Email:
               </Text>
-              <Text>{user?.email}</Text>
+              <Text color="dimmed">{user?.email}</Text>
             </Group>
             <Group spacing="xs">
-              <Text inline color="dimmed" fw={600}>
+              <Text inline fw={500}>
                 Numer telefonu:
               </Text>
-              <Text>
+              <Text color="dimmed">
                 {user?.phoneNumber ? user?.phoneNumber : 'brak danych'}
               </Text>
             </Group>
             <Group spacing="xs">
-              <Text inline color="dimmed" fw={600}>
+              <Text inline fw={500}>
                 Status:
               </Text>
               <Text>
@@ -183,28 +183,30 @@ const ViewSingleUser = () => {
               </Text>
             </Group>
             <Group spacing="xs">
-              <Text inline color="dimmed" fw={600}>
+              <Text inline fw={500}>
                 Rola:
               </Text>
-              <Text>
+              <Text color="dimmed">
                 {user?.role == 'admin' && 'Admin'}
                 {user?.role == 'user' && 'Użytkownik'}
               </Text>
             </Group>
             <Group spacing="xs">
-              <Text inline color="dimmed" fw={600}>
+              <Text inline fw={500}>
                 Data założenia:
               </Text>
-              <Text>{dayjs(user?.createdAt).format('DD.MM.YYYY, HH:mm')}</Text>
+              <Text color="dimmed">
+                {dayjs(user?.createdAt).format('DD.MM.YYYY, HH:mm')}
+              </Text>
             </Group>
             <Group spacing="xs">
-              <Text inline color="dimmed" fw={600}>
+              <Text inline fw={500}>
                 ID:
               </Text>
-              <Text>{user?.userId}</Text>
+              <Text color="dimmed">{user?.userId}</Text>
             </Group>
             <Stack spacing="xs">
-              <Text inline color="dimmed" fw={600}>
+              <Text inline fw={500}>
                 Uprawnienia:
               </Text>
               <Group>
@@ -236,13 +238,6 @@ const ViewSingleUser = () => {
       )}
     </>
   )
-}
-
-{
-  /* 
-        TO-DO :
-        -Rozwiązać błąd z propsami (user)
-        */
 }
 
 export default ViewSingleUser

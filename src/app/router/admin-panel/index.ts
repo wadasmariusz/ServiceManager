@@ -11,4 +11,16 @@ export const adminRoutes = {
   'admin-panel.users': `${BASE_URL}/panel-administratora/uzytkownicy`,
   'admin-panel.user': (userId = ':userId') =>
     `${BASE_URL}/panel-administratora/uzytkownik/${userId}`,
+
+  //SERVICES
+  'admin-panel.services': `${BASE_URL}/panel-administratora/uslugi`,
+  // 'admin-panel.service': (serviceId = ':serviceId') =>
+  //   `${BASE_URL}/panel-administratora/uslugi/${serviceId}`,
+  'admin-panel.service': `${BASE_URL}/panel-administratora/uslugi/serviceId`,
+
+  // 'admin-panel.services.edit-service': (serviceId = ':serviceId') =>
+  //   `${BASE_URL}/panel-administratora/uslugi/${serviceId}/edycja`,
+  'admin-panel.services.edit-service': `${BASE_URL}/panel-administratora/uslugi/serviceId/edycja`,
+
+  'admin-panel.services.add-service': `${BASE_URL}/panel-administratora/uslugi/dodaj-usluge`,
 }

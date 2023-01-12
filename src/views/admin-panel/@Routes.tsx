@@ -6,6 +6,7 @@ import TemplateAdminPanel from 'components/templates/TemplateAdminPanel'
 
 import { AdminPanelDashboardRoutes } from './dashboard/@Routes'
 import { AdminPanelUsersRoutes } from './users/@Routes'
+import { AdminPanelServicesRoutes } from './services/@Routes'
 
 export const adminPanelRoutes = [
   <Route
@@ -21,6 +22,7 @@ export const adminPanelRoutes = [
       path={routes['admin-panel']}
       element={<Navigate to={routes['admin-panel.dashboard']} />}
     />
-    {AdminPanelDashboardRoutes},{AdminPanelUsersRoutes}
+    {AdminPanelDashboardRoutes},{AdminPanelUsersRoutes},
+    {AdminPanelServicesRoutes}
   </Route>,
 ]

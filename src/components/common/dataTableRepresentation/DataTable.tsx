@@ -36,7 +36,9 @@ const DataTable = ({ headers, children, className }: DataTableProps) => {
           <tr className="overflow-x-scroll md:overflow-auto">
             {headers.map(({ id, label }) => (
               <th key={id}>
-                <Text>{label}</Text>
+                <Text tt="uppercase" fw={600} color="#A1A5B7">
+                  {label}
+                </Text>
               </th>
             ))}
           </tr>

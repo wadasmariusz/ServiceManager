@@ -1,4 +1,6 @@
 export const APP_NAME = 'ServiceMenager'
 export const API_URL = 'https://api2.pigener.com/v1'
+export const API_TEMPORARY_URL = 'https://api.airtable.com/v0/app68hSZbXaGdGfaB'
 export const API_URL_NO_VERSION = ''
+export const API_BEARER_TOKEN = 'keywBPA5Diy7a0N5R'
 export const BASE_URL = ''

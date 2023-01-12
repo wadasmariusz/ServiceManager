@@ -1,4 +1,8 @@
 import axios, { AxiosError } from 'axios'
+import { API_BEARER_TOKEN } from 'app/config/env'
+
+axios.defaults.headers.common = { Authorization: `bearer ${API_BEARER_TOKEN}` }
+axios.defaults.baseURL = 'http://localhost:3000/'
 
 export type TApiGetErrorData = {
   status: number
