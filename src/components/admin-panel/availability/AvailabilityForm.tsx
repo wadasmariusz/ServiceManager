@@ -42,23 +42,48 @@ const AvailabilityForm = () => {
   const methods = useForm({
     defaultValues: {
       monday: {
-        availabilityHours: [{ from: dayjs().toDate(), to: dayjs().toDate() }],
+        availabilityHours: [
+          {
+            from: dayjs('2023-01-01T08:00:00.000Z').toDate(),
+            to: dayjs('2023-01-01T16:00:00.000Z').toDate(),
+          },
+        ],
         isAvailable: false,
       },
       tuesday: {
-        availabilityHours: [{ from: dayjs().toDate(), to: dayjs().toDate() }],
+        availabilityHours: [
+          {
+            from: dayjs('2023-01-01T08:00:00.000Z').toDate(),
+            to: dayjs('2023-01-01T16:00:00.000Z').toDate(),
+          },
+        ],
         isAvailable: false,
       },
       wednesday: {
-        availabilityHours: [{ from: dayjs().toDate(), to: dayjs().toDate() }],
+        availabilityHours: [
+          {
+            from: dayjs('2023-01-01T08:00:00.000Z').toDate(),
+            to: dayjs('2023-01-01T16:00:00.000Z').toDate(),
+          },
+        ],
         isAvailable: false,
       },
       thursday: {
-        availabilityHours: [{ from: dayjs().toDate(), to: dayjs().toDate() }],
+        availabilityHours: [
+          {
+            from: dayjs('2023-01-01T08:00:00.000Z').toDate(),
+            to: dayjs('2023-01-01T16:00:00.000Z').toDate(),
+          },
+        ],
         isAvailable: false,
       },
       friday: {
-        availabilityHours: [{ from: dayjs().toDate(), to: dayjs().toDate() }],
+        availabilityHours: [
+          {
+            from: dayjs('2023-01-01T08:00:00.000Z').toDate(),
+            to: dayjs('2023-01-01T16:00:00.000Z').toDate(),
+          },
+        ],
         isAvailable: false,
       },
     },
@@ -79,6 +104,7 @@ const AvailabilityForm = () => {
           <TimeFromToPicker
             name="monday"
             hasCopyFn
+            fieldsToPasteInto={['tuesday', 'wednesday', 'thursday', 'friday']}
             checkboxLabel="Poniedziałek"
           />
           <TimeFromToPicker name="tuesday" checkboxLabel="Wtorek" />

@@ -6,12 +6,12 @@ import { FieldError, useFieldArray, useFormContext } from 'react-hook-form'
 import { AiOutlineClockCircle } from 'react-icons/ai'
 import { RxCrossCircled } from 'react-icons/rx'
 import dayjs from 'dayjs'
-import { useEffect } from 'react'
 
 type TimeFromToPickerProps = {
   name: string
   checkboxLabel: string
   hasCopyFn?: boolean
+  fieldsToPasteInto?: string[]
   error?: FieldError
   value?: {
     from: Date
@@ -23,6 +23,7 @@ const TimeFromToPicker = ({
   checkboxLabel,
   name,
   hasCopyFn,
+  fieldsToPasteInto,
 }: // ...props
 TimeFromToPickerProps) => {
   const { getValues, watch, control, setValue } = useFormContext()
@@ -34,16 +35,28 @@ TimeFromToPickerProps) => {
 
   const watchIsAvailable = watch(`${name}.isAvailable`)
 
+  const copyHoursToAllDays = () => {
+    const fieldsToCopy = getValues(`${name}.availabilityHours`)
+
+    fieldsToPasteInto?.forEach((field) => {
+      setValue(`${field}.availabilityHours`, fieldsToCopy)
+    })
+  }
+
   return (
     <Stack className="mt-5 w-[90%] sm:w-[60%]">
       <Group position="apart">
-        <InputCheckbox name={`${name}.isAvailable`} label={checkboxLabel} />
+        <InputCheckbox
+          size="md"
+          name={`${name}.isAvailable`}
+          label={checkboxLabel}
+        />
 
         <Button
           onClick={() => {
             append({
-              from: dayjs().toDate(),
-              to: dayjs().toDate(),
+              from: dayjs('2023-01-01T08:00:00.000Z').toDate(),
+              to: dayjs('2023-01-01T16:00:00.000Z').toDate(),
             })
           }}
           type="button"
@@ -87,7 +100,12 @@ TimeFromToPickerProps) => {
         </Flex>
       ))}
       {hasCopyFn && (
-        <Button type="button" variant="default" size="xs">
+        <Button
+          type="button"
+          onClick={() => copyHoursToAllDays()}
+          variant="default"
+          size="xs"
+        >
           Kopiuj te godziny dla wszytskich dni roboczych
         </Button>
       )}
