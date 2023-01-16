@@ -24,6 +24,6 @@ export const adminRoutes = {
 
   'admin-panel.services.add-service': `${BASE_URL}/panel-administratora/uslugi/dodaj-usluge`,
 
-  //ACCESSIBILITY
-  'admin-panel.accessibility': `${BASE_URL}/panel-administratora/dostepnosc`,
+  //AVAILABILITY
+  'admin-panel.availability': `${BASE_URL}/panel-administratora/dostepnosc`,
 }

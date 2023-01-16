@@ -56,9 +56,9 @@ export const adminPanelSideNavigationConfig: TSideNavItem[] = [
     roles: [ROLE_ADMIN],
   },
   {
-    id: 'accessibility',
+    id: 'availability',
     label: 'Dostępność',
-    route: routes['admin-panel.accessibility'],
+    route: routes['admin-panel.availability'],
     icon: BsCalendar3,
     roles: [ROLE_ADMIN],
   },

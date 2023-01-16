@@ -18,15 +18,3 @@ export const Button = ({ text, children, ...props }: ButtonProps) => {
     </>
   )
 }
-
-// const PropsTest = () => {
-//   return (
-//     <div>
-//       <Button
-//         text="hej"
-//         onClick={() => true}
-//         type='button'
-//       />
-//     </div>
-//   )
-// }

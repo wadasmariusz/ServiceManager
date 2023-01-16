@@ -1,27 +1,33 @@
-import React from 'react'
-import { Textarea, TextareaProps } from '@mantine/core'
+import { TimeInput as MantineTimeInput, TimeInputProps } from '@mantine/dates'
 import { RefCallBack } from 'react-hook-form'
 import { Controller, FieldError, useFormContext } from 'react-hook-form'
 import { IconType } from 'react-icons/lib'
 
-export type InputTextAreaProps = {
+export type InputTimeProps = {
   name: string
   label?: string
   icon?: IconType
-  description?: string
   placeholder?: string
-} & Omit<TextareaProps, 'error' | 'icon' | 'description' | 'label'>
+  desciption?: string
+} & Omit<
+  TimeInputProps,
+  'placeholder' | 'description' | 'icon' | 'label' | 'error'
+>
 
-export type InputTextAreaPureProps = {
+export type InputTimePureProps = {
   label?: string
   icon?: IconType
-  description?: string
+  desciption?: string
   placeholder?: string
   error?: FieldError
   innerRef: RefCallBack
-  onChange?: React.ChangeEventHandler<HTMLTextAreaElement>
-} & Omit<TextareaProps, 'error' | 'icon' | 'description' | 'label'>
-export const InputTextArea = ({ name, icon, ...props }: InputTextAreaProps) => {
+  onChange?: (value: Date) => void
+} & Omit<
+  TimeInputProps,
+  'placeholder' | 'description' | 'icon' | 'label' | 'error'
+>
+
+export const InputTime = ({ name, icon, ...props }: InputTimeProps) => {
   const { control } = useFormContext()
   return (
     <Controller
@@ -30,11 +36,11 @@ export const InputTextArea = ({ name, icon, ...props }: InputTextAreaProps) => {
       render={({ field: { ref, ...field }, fieldState }) => {
         const { error } = fieldState
         return (
-          <InputTextAreaPure
+          <InputTimePure
             {...field}
             {...props}
-            innerRef={ref}
             error={error}
+            innerRef={ref}
             icon={icon}
           />
         )
@@ -43,28 +49,23 @@ export const InputTextArea = ({ name, icon, ...props }: InputTextAreaProps) => {
   )
 }
 
-export const InputTextAreaPure = ({
-  icon: Icon,
+export const InputTimePure = ({
   label,
+  icon: Icon,
   placeholder,
   error,
   innerRef,
   onChange,
-  value,
   ...props
-}: InputTextAreaPureProps) => {
+}: InputTimePureProps) => {
   return (
-    <Textarea
+    <MantineTimeInput
       ref={innerRef}
       label={label}
-      placeholder={placeholder || label}
-      icon={Icon ? <Icon size={'1.2em'} /> : null}
+      placeholder={placeholder}
+      icon={Icon ? <Icon /> : null}
       error={error?.message}
       onChange={onChange}
-      value={value ?? ''}
-      minRows={2}
-      autosize
-      withAsterisk={false}
       {...props}
     />
   )
