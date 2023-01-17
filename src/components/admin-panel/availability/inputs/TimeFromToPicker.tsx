@@ -102,7 +102,7 @@ TimeFromToPickerProps) => {
       {hasCopyFn && (
         <Button
           type="button"
-          onClick={() => copyHoursToAllDays()}
+          onClick={copyHoursToAllDays}
           variant="default"
           size="xs"
         >

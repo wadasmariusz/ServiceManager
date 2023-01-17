@@ -16,6 +16,17 @@ import { FormProvider, useFieldArray, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
 import TimeFromToPicker from './inputs/TimeFromToPicker'
 
+const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
+const from = dayjs().startOf('day').add(9, 'hour').toDate()
+const to = dayjs().startOf('day').add(17, 'hour').toDate()
+const initialValues = weekdays.reduce((lookup, weekday) => {
+  lookup[weekday] = {
+    availabilityHours: [{ from: from, to: to }],
+    isAvailable: false,
+  }
+  return lookup
+}, {})
+
 const AvailabilityForm = () => {
   // const navigate = useNavigate()
   // const onSuccess = (data: EditServiceResponse) => {
@@ -39,55 +50,13 @@ const AvailabilityForm = () => {
   //   EditServiceFormFields,
   //   EditServiceResponse
   // >(editServiceSchema, putEditService, { onSuccess, onError })
+
   const methods = useForm({
     defaultValues: {
-      monday: {
-        availabilityHours: [
-          {
-            from: dayjs('2023-01-01T08:00:00.000Z').toDate(),
-            to: dayjs('2023-01-01T16:00:00.000Z').toDate(),
-          },
-        ],
-        isAvailable: false,
-      },
-      tuesday: {
-        availabilityHours: [
-          {
-            from: dayjs('2023-01-01T08:00:00.000Z').toDate(),
-            to: dayjs('2023-01-01T16:00:00.000Z').toDate(),
-          },
-        ],
-        isAvailable: false,
-      },
-      wednesday: {
-        availabilityHours: [
-          {
-            from: dayjs('2023-01-01T08:00:00.000Z').toDate(),
-            to: dayjs('2023-01-01T16:00:00.000Z').toDate(),
-          },
-        ],
-        isAvailable: false,
-      },
-      thursday: {
-        availabilityHours: [
-          {
-            from: dayjs('2023-01-01T08:00:00.000Z').toDate(),
-            to: dayjs('2023-01-01T16:00:00.000Z').toDate(),
-          },
-        ],
-        isAvailable: false,
-      },
-      friday: {
-        availabilityHours: [
-          {
-            from: dayjs('2023-01-01T08:00:00.000Z').toDate(),
-            to: dayjs('2023-01-01T16:00:00.000Z').toDate(),
-          },
-        ],
-        isAvailable: false,
-      },
+      ...initialValues,
     },
   })
+
   //TO-DO:
   // Przy wysyłaniu zrobić do isavailable podwójną negację żeby zamieniało undefined na false
   // Przy wysyłaniu zmienić format daty na ISOString
