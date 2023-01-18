@@ -12,35 +12,20 @@ import { isApiRuntimeError } from 'components/common'
 import { Button } from 'components/common/mantine/Button'
 import mantineNotification from 'components/common/mantine/notifications'
 import dayjs from 'dayjs'
-import { FormProvider, useForm } from 'react-hook-form'
+import { FormProvider, useFieldArray, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router'
-import TimeFromToPicker from './inputs/TimeFromToPicker'
+import DateFromToPicker from './inputs/DateFromToPicker'
 
-type FromTo = {
-  from: Date
-  to: Date
+const defaultValues = {
+  availabilityHours: [
+    {
+      from: dayjs().startOf('day').add(9, 'hour').toISOString(),
+      to: dayjs().startOf('day').add(17, 'hour').toISOString(),
+    },
+  ],
 }
 
-type Availability = {
-  availabilityHours: FromTo[]
-  isAvailable: boolean
-}
-
-const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
-const from = dayjs().startOf('day').add(9, 'hour').toDate()
-const to = dayjs().startOf('day').add(17, 'hour').toDate()
-
-type Weekday = typeof weekdays[number]
-
-const initialValues = weekdays.reduce(
-  (lookup: Record<Weekday, Availability>, weekday: Weekday) => {
-    lookup[weekday] = { availabilityHours: [{ from, to }], isAvailable: false }
-    return lookup
-  },
-  {},
-)
-
-const AvailabilityForm = () => {
+const SheduleForm = () => {
   // const navigate = useNavigate()
   // const onSuccess = (data: EditServiceResponse) => {
   //   // navigate(routes['admin-panel.service'](serviceId))
@@ -64,15 +49,7 @@ const AvailabilityForm = () => {
   //   EditServiceResponse
   // >(editServiceSchema, putEditService, { onSuccess, onError })
 
-  const methods = useForm({
-    defaultValues: {
-      ...initialValues,
-    },
-  })
-
-  //TO-DO:
-  // Przy wysyłaniu zrobić do isavailable podwójną negację żeby zamieniało undefined na false
-  // Przy wysyłaniu zmienić format daty na ISOString
+  const methods = useForm({ defaultValues: defaultValues })
 
   return (
     <FormProvider {...methods}>
@@ -83,21 +60,12 @@ const AvailabilityForm = () => {
         className={'w-full'}
       >
         <Stack className="w-full bg-white" align="center">
-          <TimeFromToPicker
-            name="monday"
-            hasCopyFn
-            fieldsToPasteInto={['tuesday', 'wednesday', 'thursday', 'friday']}
-            checkboxLabel="Poniedziałek"
-          />
-          <TimeFromToPicker name="tuesday" checkboxLabel="Wtorek" />
-          <TimeFromToPicker name="wednesday" checkboxLabel="Środa" />
-          <TimeFromToPicker name="thursday" checkboxLabel="Czwartek" />
-          <TimeFromToPicker name="friday" checkboxLabel="Piątek" />
-          <Button type="submit">Zatwierdź godziny</Button>
+          <DateFromToPicker />
+          <Button type="submit">Zatwierdź daty</Button>
         </Stack>
       </form>
     </FormProvider>
   )
 }
 
-export default AvailabilityForm
+export default SheduleForm

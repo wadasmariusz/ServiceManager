@@ -55,8 +55,8 @@ TimeFromToPickerProps) => {
         <Button
           onClick={() => {
             append({
-              from: dayjs('2023-01-01T08:00:00.000Z').toDate(),
-              to: dayjs('2023-01-01T16:00:00.000Z').toDate(),
+              from: dayjs().startOf('day').add(9, 'hour').toDate(),
+              to: dayjs().startOf('day').add(17, 'hour').toDate(),
             })
           }}
           type="button"

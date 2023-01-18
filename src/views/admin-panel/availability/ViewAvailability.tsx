@@ -1,5 +1,6 @@
 import { Tabs } from '@mantine/core'
 import AvailabilityForm from 'components/admin-panel/availability/AvailabilityForm'
+import SheduleForm from 'components/admin-panel/availability/SheduleForm'
 
 const ViewAvailability = () => {
   return (
@@ -14,7 +15,7 @@ const ViewAvailability = () => {
       </Tabs.Panel>
 
       <Tabs.Panel value="shedule" pt="xs">
-        Twój harmonogram
+        <SheduleForm />
       </Tabs.Panel>
     </Tabs>
   )

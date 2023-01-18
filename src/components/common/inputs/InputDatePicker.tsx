@@ -47,7 +47,7 @@ export const InputDatePicker = ({
   )
 }
 
-export const InputDatePickerPure: React.FC<InputDatePickerPureProps> = ({
+export const InputDatePickerPure = ({
   label,
   placeholder,
   icon: Icon,
@@ -56,7 +56,7 @@ export const InputDatePickerPure: React.FC<InputDatePickerPureProps> = ({
   onChange,
   value,
   ...props
-}) => {
+}: InputDatePickerPureProps) => {
   return (
     <DatePicker
       value={value ? new Date(value) : null}
